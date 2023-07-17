@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct CircleImage: View {
+    let landmark: Landmark
     var body: some View {
-        Image("dashboard")
+        landmark.image
             .resizable()
             .frame(width:200, height: 200)
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .overlay{
-                Circle().stroke(.white, lineWidth: 10)
+                Circle().stroke(.white, lineWidth: 2)
             }
             .shadow(radius: 10)
         
@@ -24,6 +25,6 @@ struct CircleImage: View {
 
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage()
+        CircleImage(landmark: landmarks[0])
     }
 }
